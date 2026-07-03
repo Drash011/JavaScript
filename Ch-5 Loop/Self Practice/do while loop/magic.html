@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC NUMBER</title>
+</head>
+
+<body>
+
+    <h1>Magic Number</h1>
+
+    <script>
+        
+        let n = +prompt("Enter any Number :");
+        
+        let rem;
+        do {
+            let sum = 0;
+            do {
+                rem = n % 10;
+                sum = sum + rem;
+                n = Math.floor(n / 10);
+            } while (n != 0);
+
+            n = sum;
+        } while (n > 9);
+
+        if (n == 1) {
+            console.log("This is Magic Number...");
+            document.write("This is Magic Number...");
+        }
+        else {
+            console.log("This is Not Magic Number...");
+            document.write("This is Not Magic Number...");
+        }
+    </script>
+
+</body>
+
+</html>

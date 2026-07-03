@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALINDROM NUMBER</title>
+</head>
+
+<body>
+
+    <h1>Palindrom Number</h1>
+
+    <script>
+        
+        let n = +prompt("Enter any number :");
+        
+        let palin = n;
+        let rem, rev = 0;
+
+        while (n != 0) {
+            rem = n % 10;
+            rev = rev * 10 + rem;
+            n = Math.floor(n / 10);
+        }
+
+        console.log("Reverse : ", rev);
+
+        if (palin == rev) {
+            console.log("This is Palindrom Number");
+            document.write("This is Palindrom Number");
+        }
+        else {
+            console.log("This is Not a Palindrom Number");
+            document.write("This is Not a Palindrom Number");
+        }
+    </script>
+
+</body>
+
+</html>

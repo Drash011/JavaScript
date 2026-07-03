@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVERSE NUMBER</title>
+</head>
+
+<body>
+
+    <h1>Reverse Number</h1>
+
+    <script>
+        
+        let n = +prompt("Enter any Number :");
+        console.log("Number: ", n);
+        document.write("Number: ", n);
+        
+        let rev = 0;
+        for (; n != 0; n = Math.floor(n / 10)) {
+            let rem = n % 10;
+            rev = rev * 10 + rem;
+        }
+
+        console.log("Reverse: ", rev);
+        document.write("<br>Reverse: ", rev);
+
+    </script>
+
+</body>
+
+</html>
