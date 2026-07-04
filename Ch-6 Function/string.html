@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Length</title>
+</head>
+
+<body>
+
+    <h1>Length of String</h1>
+
+    <script>
+
+        function stringLength(str) {
+
+            let count = 0;
+
+            for (let ch of str) {
+                count++;
+            }
+
+            return count;
+        }
+
+        let str = prompt("Enter any string:");
+
+        let result = stringLength(str);
+
+        console.log("Length is :", result);
+        document.write("Length is : " + result);
+
+    </script>
+
+</body>
+
+</html>

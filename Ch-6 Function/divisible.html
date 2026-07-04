@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisible</title>
+</head>
+
+<body>
+
+    <h1>Divisible by both 3 & 5</h1>
+
+    <script>
+        let n = +prompt("Enter any Number : ");
+
+        divisible(n);
+
+        function divisible(n) {
+            if (n % 3 == 0 && n % 5 == 0) {
+                document.write("The given number is divisible by both 3 & 5.");
+                console.log("The given number is divisible by both 3 & 5.");
+            }
+            else {
+                document.write("The given number is not divisible by both 3 & 5.");
+                console.log("The given number is not divisible by both 3 & 5.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
