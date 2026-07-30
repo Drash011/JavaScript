@@ -10,7 +10,6 @@ let students = [
         details: function() {
             return `${this.name} is studying ${this.course}`;
         }
-
     },
 
     {
@@ -23,7 +22,6 @@ let students = [
         details: function() {
             return `${this.name} is studying ${this.course}`;
         }
-
     },
 
     {
@@ -36,40 +34,37 @@ let students = [
         details: function() {
             return `${this.name} is studying ${this.course}`;
         }
-
     }
 
 ];
 
+
 function addStudent(student) {
 
-    let found = students.find(s => s.id === student.id);
+    let found = students.filter(s => s.id === student.id);
 
-    if (found) {
+    if (found.length > 0) {
 
-        console.log("Student ID Already Exists");
-
-        document.write("<p class='success'>Student ID Already Exists</p>");
+        alert("Student ID Already Exists");
 
     } else {
 
         students.push(student);
 
+        alert("Student Added Successfully");
         console.log("Student Added Successfully");
-
-        document.write("<p class='success'>Student Added Successfully</p>");
 
     }
 
 }
 
-addStudent({
+let newStudent = {
 
-    id: 104,
-    name: "Neha",
-    age: 22,
-    course: "React",
-    marks: 91,
+    id: Number(prompt("Enter Student ID")),
+    name: prompt("Enter Student Name"),
+    age: Number(prompt("Enter Student Age")),
+    course: prompt("Enter Course"),
+    marks: Number(prompt("Enter Marks")),
 
     details: function() {
 
@@ -77,91 +72,111 @@ addStudent({
 
     }
 
-});
+};
+
+addStudent(newStudent);
 
 
 function updateStudent(id, name, course, marks) {
 
-    let student = students.find(s => s.id === id);
+    let student = students.filter(s => s.id === id);
 
-    if (student) {
+    if (student.length > 0) {
 
-        student.name = name;
-        student.course = course;
-        student.marks = marks;
+        student[0].name = name;
+        student[0].course = course;
+        student[0].marks = marks;
 
-        console.log("Student Updated");
+        alert("Student Updated Successfully");
+        console.log("Student Updated Successfully");
 
-        document.write("<p class='success'>Student Updated Successfully</p>");
+    } else {
+
+        // alert("Student Not Found");
+        return student;
 
     }
 
 }
 
-updateStudent(102, "Priya Patel", "Full Stack", 95);
+let updateId = Number(prompt("Enter Student ID to Update"));
+
+let updateName = prompt("Enter New Name");
+
+let updateCourse = prompt("Enter New Course");
+
+let updateMarks = Number(prompt("Enter New Marks"));
+
+updateStudent(updateId, updateName, updateCourse, updateMarks);
+
 
 function deleteStudent(id) {
 
-    let index = students.findIndex(s => s.id === id);
+    let oldLength = students.length;
 
-    if (index != -1) {
+    students = students.filter(s => s.id !== id);
 
-        students.splice(index, 1);
+    if (students.length < oldLength) {
 
-        console.log("Student Deleted");
+        alert("Student Deleted Successfully");
+        console.log("Student Deleted Successfully");
 
-        document.write("<p class='success'>Student Deleted Successfully</p>");
+    } else {
+
+        alert("Student Not Found");
 
     }
 
 }
 
-deleteStudent(103);
+let deleteId = Number(prompt("Enter Student ID to Delete"));
+
+deleteStudent(deleteId);
+
 
 document.write("<h2>All Students</h2>");
-
-console.log("------- All Students -------");
+console.log("------ All Students ------");
 
 for (let student of students) {
 
     console.log(student);
 
     document.write(`
+    
+    <div style="border:1px solid black;padding:10px;margin:10px;">
+    
+        <b>ID :</b> ${student.id}<br><br>
 
-<div class="card">
+        <b>Name :</b> ${student.name}<br><br>
 
-<b>ID :</b> ${student.id}<br><br>
+        <b>Age :</b> ${student.age}<br><br>
 
-<b>Name :</b> ${student.name}<br><br>
+        <b>Course :</b> ${student.course}<br><br>
 
-<b>Age :</b> ${student.age}<br><br>
+        <b>Marks :</b> ${student.marks}
 
-<b>Course :</b> ${student.course}<br><br>
+    </div>
 
-<b>Marks :</b> ${student.marks}
-
-</div>
-
-`);
+    `);
 
 }
 
 
 document.write("<h2>Student Object Details</h2>");
+console.log("------ Student Object Details ------");
 
-console.log("------ Student Details ------");
 
 let selectedStudent = students[0];
 
-document.write("<div class='card'>");
+document.write("<div style='border:1px solid black;padding:10px;margin:10px;'>");
 
 for (let key in selectedStudent) {
 
-    if (typeof selectedStudent[key] != "function") {
+    if (typeof selectedStudent[key] !== "function") {
 
         console.log(key + " : " + selectedStudent[key]);
 
-        document.write("<b>" + key + "</b> : " + selectedStudent[key] + "<br><br>");
+        document.write(`<b>${key}</b> : ${selectedStudent[key]}<br><br>`);
 
     }
 
@@ -171,7 +186,6 @@ document.write("</div>");
 
 
 document.write("<h2>Result</h2>");
-
 console.log("------ Result ------");
 
 for (let student of students) {
@@ -180,7 +194,15 @@ for (let student of students) {
 
     console.log(student.name + " : " + result);
 
-    document.write("<div class='card'><b>" + student.name + "</b> : " + result + "</div>");
+    document.write(`
+    
+    <div style="border:1px solid black;padding:10px;margin:10px;">
+    
+        <b>${student.name}</b> : ${result}
+    
+    </div>
+
+    `);
 
 }
 
@@ -197,21 +219,36 @@ for (let student of students) {
 
 }
 
-console.log("Topper :", topper.name, topper.marks);
-
+console.log("------ Topper ------");
+console.log(topper);
 document.write("<h2>Topper</h2>");
 
-document.write("<div class='card'><h3>" + topper.name + "</h3><b>Marks :</b> " + topper.marks + "</div>");
+document.write(`
+<div style="border:1px solid black;padding:10px;margin:10px;">
+
+    <h3>${topper.name}</h3>
+
+    <b>Marks :</b> ${topper.marks}
+
+</div>
+`);
 
 
 document.write("<h2>this Keyword</h2>");
-
 console.log("------ this Keyword ------");
 
 for (let student of students) {
 
     console.log(student.details());
 
-    document.write("<div class='card'>" + student.details() + "</div>");
+    document.write(`
+    
+    <div style="border:1px solid black;padding:10px;margin:10px;">
+    
+        ${student.details()}
+    
+    </div>
+
+    `);
 
 }
