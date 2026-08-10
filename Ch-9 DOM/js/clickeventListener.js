@@ -17,6 +17,8 @@ heading.style.border = '1px solid purple'
 
 const fname = document.querySelector("#FName");
 const lname = document.querySelector("#LName");
+const gr_id = document.querySelector("#GR_ID");
+const course = document.querySelector("#Course");
 const btn = document.querySelector("#btn");
 
 fname.style.padding = '10px';
@@ -35,17 +37,42 @@ lname.style.display = 'block';
 lname.style.margin = '0px auto'
 
 
+gr_id.style.padding = '10px';
+gr_id.style.border = '2px solid black';
+gr_id.style.borderRadius = '5px';
+gr_id.style.width = '200px';
+gr_id.style.display = 'block';
+gr_id.style.margin = '0px auto'
+
+
+course.style.padding = '10px';
+course.style.border = '2px solid black';
+course.style.borderRadius = '5px';
+course.style.width = '200px';
+course.style.display = 'block';
+course.style.margin = '0px auto'
+
+
 btn.style.padding = '10px 20px';
 btn.style.border = '2px solid black';
 btn.style.display = 'block';
 btn.style.margin = '0px auto'
 btn.style.backgroundColor = 'black';
-btn.style.color='white';
+btn.style.color = 'white';
 
 // Click Event 
 btn.addEventListener("click", () => {
-    if (fname.value !== "" && lname.value !== "") {
-        alert(`Hello ${fname.value} ${lname.value}`);
+    if (
+        fname.value !== "" &&
+        lname.value !== "" &&
+        gr_id.value !== "" &&
+        course.value !== ""
+    ) {
+        alert(`Hello ${fname.value} ${lname.value}
+GR ID: ${gr_id.value}
+Course: ${course.value}
+
+🌟 Keep learning, keep growing, keep shining!`);
     } else {
         alert("Fill the Details.....");
     }
