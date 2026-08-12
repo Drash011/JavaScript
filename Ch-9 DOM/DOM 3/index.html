@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Mouse Events</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+
+            <h1>JavaScript Events</h1>
+
+            <p>
+                Interactive demonstration of mouse events and event listeners
+            </p>
+
+        </header>
+
+
+        <!-- Event Buttons -->
+        <div class="event-buttons">
+
+            <button class="event-btn" id="clickBtn">
+                <i class="fa-solid fa-hand-pointer"></i>
+                Click
+            </button>
+
+            <button class="event-btn" id="doubleClickBtn">
+                <i class="fa-solid fa-computer-mouse"></i>
+                Double Click
+            </button>
+
+            <button class="event-btn" id="mouseEventsBtn">
+                <i class="fa-solid fa-arrow-pointer"></i>
+                Mouse Events
+            </button>
+
+        </div>
+
+
+        <!-- Main Content -->
+
+        <main class="content">
+
+
+            <!-- Counter Card -->
+
+            <section class="card" id="counterCard">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-plus-minus"></i>
+                    </div>
+
+                    <div>
+                        <h2>Counter App</h2>
+
+                        <p>
+                            Click to increase or decrease the value
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="counter">
+
+                    <h3>Current Value</h3>
+
+                    <div class="counter-main">
+
+                        <button class="counter-btn" id="decrement">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+
+                        <span id="count">0</span>
+
+                        <button class="counter-btn" id="increment">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Mouse Events Card -->
+            <section class="card" id="mouseEventsCard">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                    </div>
+
+                    <div>
+                        <h2>Mouse Events</h2>
+
+                        <p>
+                            Interact with the box below
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="mouse-area">
+
+                    <p>
+                        Try pressing, holding and moving your mouse over the box.
+                    </p>
+
+
+                    <div class="box-wrapper">
+
+                        <div class="box" id="mouseBox"></div>
+
+                    </div>
+
+
+                    <div class="status">
+
+                        <span class="status-dot"></span>
+
+                        <span id="eventStatus">
+                            Waiting for interaction...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="mouseEvent.js"></script>
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@ const course = document.querySelector("#Course");
 const btn = document.querySelector("#btn");
 
 fname.style.padding = '10px';
-fname.style.border = '2px solid black';
+fname.style.border = '2px solid gray';
 fname.style.borderRadius = '5px';
 fname.style.width = '200px';
 fname.style.display = 'block';
@@ -30,7 +30,7 @@ fname.style.margin = '0px auto'
 
 
 lname.style.padding = '10px';
-lname.style.border = '2px solid black';
+lname.style.border = '2px solid gray';
 lname.style.borderRadius = '5px';
 lname.style.width = '200px';
 lname.style.display = 'block';
@@ -38,7 +38,7 @@ lname.style.margin = '0px auto'
 
 
 gr_id.style.padding = '10px';
-gr_id.style.border = '2px solid black';
+gr_id.style.border = '2px solid gray';
 gr_id.style.borderRadius = '5px';
 gr_id.style.width = '200px';
 gr_id.style.display = 'block';
@@ -46,7 +46,7 @@ gr_id.style.margin = '0px auto'
 
 
 course.style.padding = '10px';
-course.style.border = '2px solid black';
+course.style.border = '2px solid gray';
 course.style.borderRadius = '5px';
 course.style.width = '200px';
 course.style.display = 'block';
@@ -54,7 +54,7 @@ course.style.margin = '0px auto'
 
 
 btn.style.padding = '10px 20px';
-btn.style.border = '2px solid black';
+btn.style.border = '2px solid gray';
 btn.style.display = 'block';
 btn.style.margin = '0px auto'
 btn.style.backgroundColor = 'black';
