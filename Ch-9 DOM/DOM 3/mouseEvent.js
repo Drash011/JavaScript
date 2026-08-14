@@ -1,27 +1,50 @@
-const increment = document.getElementById("increment");
-const decrement = document.getElementById("decrement");
-const count = document.getElementById("count");
+// TOP BUTTONS
+const clickBtn =
+    document.getElementById("clickBtn");
 
-const mouseEventsBtn = document.getElementById("mouseEventsBtn");
+const doubleClickBtn =
+    document.getElementById("doubleClickBtn");
 
-const counterCard = document.getElementById("counterCard");
-const mouseEventsCard = document.getElementById("mouseEventsCard");
+const mouseEventsBtn =
+    document.getElementById("mouseEventsBtn");
 
-// CLICK EVENT
-const clickBtn = document.getElementById("clickBtn");
+const mouseEventsCard =
+    document.getElementById("mouseEventsCard");
 
+// SINGLE CLICK
 clickBtn.addEventListener("click", () => {
+
+    clickBtn.classList.add("active");
+
+    setTimeout(() => {
+
+        clickBtn.classList.remove("active");
+
+    }, 300);
+
     alert("Clicked...!");
+
 });
 
-// DOUBLE CLICK EVENT
-const doubleClickBtn = document.getElementById("doubleClickBtn");
+
+// DOUBLE CLICK
 
 doubleClickBtn.addEventListener("dblclick", () => {
+
+    doubleClickBtn.classList.add("active");
+
+    setTimeout(() => {
+
+        doubleClickBtn.classList.remove("active");
+
+    }, 300);
+
     alert("Double Clicked...!");
+
 });
 
 // MOUSE EVENTS BUTTON
+
 mouseEventsBtn.addEventListener("click", () => {
 
     mouseEventsBtn.classList.add("active");
@@ -36,94 +59,226 @@ mouseEventsBtn.addEventListener("click", () => {
     setTimeout(() => {
 
         mouseEventsBtn.classList.remove("active");
+
         mouseEventsCard.classList.remove("highlight");
 
     }, 1000);
 
 });
 
-// Increment
+// COUNTER
+
+const increment =
+    document.getElementById("increment");
+
+const decrement =
+    document.getElementById("decrement");
+
+const count =
+    document.getElementById("count");
+
+
+let number = 1;
+
+/* UPDATE COUNTER */
+function updateCounter() {
+
+    count.innerText = number;
+
+    count.classList.add("changed");
+
+    setTimeout(() => {
+
+        count.classList.remove("changed");
+
+    }, 150);
+
+}
+
+/* INCREMENT */
 increment.addEventListener("click", () => {
 
-    let num = Number(count.innerText);
+    if (number < 20) {
 
-    if (num < 20) {
-        count.innerText = num + 1;
+        number++;
+
+        updateCounter();
+
     }
 
 });
 
-
-// Decrement
+/* DECREMENT */
 decrement.addEventListener("click", () => {
 
-    let num = Number(count.innerText);
+    if (number > 1) {
 
-    if (num > 1) {
-        count.innerText = num - 1;
+        number--;
+
+        updateCounter();
+
     }
 
 });
 
-
 // MOUSE EVENTS
-const box = document.querySelector(".box");
-const counter = document.querySelector(".counter");
-const eventStatus = document.getElementById("eventStatus");
 
-// MOUSEDOWN
+const box =
+    document.getElementById("mouseBox");
+
+const counter =
+    document.querySelector(".counter");
+
+const eventStatus =
+    document.getElementById("eventStatus");
+
+const boxWrapper =
+    document.querySelector(".box-wrapper");
+
+
+box.addEventListener("mouseenter", () => {
+
+    box.classList.add("js-hover");
+
+    eventStatus.innerText =
+        "mouseenter event triggered";
+
+});
+
+
+// MOUSE LEAVE
+
+box.addEventListener("mouseleave", () => {
+
+    box.classList.remove("js-hover");
+
+    box.classList.remove("pressed");
+
+    box.style.transform =
+        "translate3d(0, 0, 0)";
+
+    counter.classList.remove("active");
+
+    eventStatus.innerText =
+        "mouseleave event triggered";
+
+});
+
+
+// MOUSE DOWN
+
 box.addEventListener("mousedown", () => {
 
     box.classList.add("pressed");
 
-    eventStatus.innerText = "mousedown event triggered";
+    eventStatus.innerText =
+        "mousedown event triggered";
 
 });
 
-// MOUSEUP
+
+// MOUSE UP
+
 box.addEventListener("mouseup", () => {
 
     box.classList.remove("pressed");
 
-    eventStatus.innerText = "mouseup event triggered";
+    eventStatus.innerText =
+        "mouseup event triggered";
 
 });
 
-// MOUSEOVER
+
+// MOUSE OVER
+
 box.addEventListener("mouseover", () => {
 
     counter.classList.add("active");
 
-    eventStatus.innerText = "mouseover event triggered";
+    eventStatus.innerText =
+        "mouseover event triggered";
 
 });
 
-// MOUSEOUT
+
+// MOUSE OUT
+
 box.addEventListener("mouseout", () => {
 
     counter.classList.remove("active");
 
-    eventStatus.innerText = "mouseout event triggered";
+    eventStatus.innerText =
+        "mouseout event triggered";
 
 });
 
-// MOUSEMOVE
-const boxWrapper = document.querySelector(".box-wrapper");
+
+// SINGLE CLICK ON BOX
+
+box.addEventListener("click", () => {
+
+    box.classList.add("clicked");
+
+    eventStatus.innerText =
+        "click event triggered";
+
+});
+
+
+// DOUBLE CLICK ON BOX
+
+box.addEventListener("dblclick", () => {
+
+    box.classList.add("double-clicked");
+
+    eventStatus.innerText =
+        "dblclick event triggered";
+
+});
+
+
+// MOUSE MOVE
 
 boxWrapper.addEventListener("mousemove", (event) => {
-    const rect = boxWrapper.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const moveX = mouseX - centerX;
-    const moveY = mouseY - centerY;
+
+    const rect =
+        boxWrapper.getBoundingClientRect();
+
+    const mouseX =
+        event.clientX - rect.left;
+
+    const mouseY =
+        event.clientY - rect.top;
+
+    const centerX =
+        rect.width / 2;
+
+    const centerY =
+        rect.height / 2;
+
+    const moveX =
+        mouseX - centerX;
+
+    const moveY =
+        mouseY - centerY;
+
+
     box.style.transform =
-        `translate3d(${moveX * 0.35}px, ${moveY * 0.35}px, 60px)`;
-    eventStatus.innerText = "mousemove event triggered";
+        `translate3d(
+                    ${moveX * 0.35}px,
+                    ${moveY * 0.35}px,
+                    60px
+                )`;
+
+
+    eventStatus.innerText =
+        "mousemove event triggered";
+
 });
 
-// MOUSELEAVE
+
+// MOUSE LEAVE FROM WRAPPER
+
 boxWrapper.addEventListener("mouseleave", () => {
 
     box.style.transform =
