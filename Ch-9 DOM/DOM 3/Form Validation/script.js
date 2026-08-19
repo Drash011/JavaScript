@@ -1,24 +1,31 @@
-const student_Form = document.getElementById('student_Form');
-const fullName = document.getElementById('full_name');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const mobile = document.getElementById('mobile');
-const birth_date = document.getElementById('birth_date');
-const gender = document.querySelectorAll('input:checked');
-gender.forEach(input => {
-    console.log(input.value);
-});
-const hobby = document.querySelectorAll('input:checked');
-hobby.forEach(input => {
-    console.log(input.value);
-});
-
-const city = document.getElementById('city');
-const about = document.getElementById('about');
-
-
 student_Form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    document.querySelectorAll('input, textarea, select').forEach(input => {
+        input.classList.remove('border-danger');
+    });;
+
+    document.querySelectorAll('.error').forEach(span => {
+        span.innerText = "";
+    });
+
+    const student_Form = document.getElementById('student_Form');
+    const fullName = document.getElementById('full_name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const mobile = document.getElementById('mobile');
+    const birth_date = document.getElementById('birth_date');
+    const gender = document.querySelectorAll('input:checked');
+    gender.forEach(input => {
+        // console.log(input.value);
+    });
+    const hobby = document.querySelectorAll('input:checked');
+    hobby.forEach(input => {
+        // console.log(input.value);
+    });
+
+    const city = document.getElementById('city');
+    const about = document.getElementById('about');
 
     let isValid = true;
 
@@ -82,7 +89,6 @@ student_Form.addEventListener('submit', (e) => {
     if (gender.length === 0) {
         document.querySelector('#genderError').innerText =
             "* Please select your gender...";
-
         isValid = false;
     }
 
@@ -108,13 +114,6 @@ student_Form.addEventListener('submit', (e) => {
             "* Please write something about yourself...";
         isValid = false;
     }
-
-
-
-
-
-
-
 
     console.log("Form Submitted...");
 });
