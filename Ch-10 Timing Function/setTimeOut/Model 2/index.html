@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flash Message Modal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+
+    <main class="page">
+        <button class="open-btn" id="openModal">
+            Open Flash Messages
+        </button>
+    </main>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose">
+                x
+            </button>
+
+
+            <div class="modal-header">
+                <span>Flash Message</span>
+                <h1>Notifications</h1>
+                <p>
+                    Important updates and alerts
+                </p>
+            </div>
+
+
+            <div class="notifications">
+
+                <div class="notification info">
+                    <div class="icon">
+                        ⓘ
+                    </div>
+                    <div class="message">
+                        <h3>
+                            New Update Available
+                        </h3>
+                        <p>
+                            Version 2.1 is ready to download now.
+                        </p>
+                    </div>
+                    <button class="notification-close">
+                        x
+                    </button>
+                </div>
+
+
+                <div class="notification success">
+                    <div class="icon">
+                        ✓
+                    </div>
+                    <div class="message">
+                        <h3>
+                            Payment Processed Successfully
+                        </h3>
+                        <p>
+                            Your transaction has been completed.
+                        </p>
+                    </div>
+                    <button class="notification-close">
+                        x
+                    </button>
+                </div>
+
+
+                <div class="notification error">
+                    <div class="icon">
+                        ⊗
+                    </div>
+                    <div class="message">
+                        <h3>
+                            Connection Failed
+                        </h3>
+                        <p>
+                            Please check your internet & try again.
+                        </p>
+                    </div>
+                    <button class="notification-close">
+                        x
+                    </button>
+                </div>
+
+
+                <div class="notification warning">
+                    <div class="icon">
+                        ⚠
+                    </div>
+                    <div class="message">
+                        <h3>
+                            Low Storage Space
+                        </h3>
+                        <p>
+                            Clear space to continue saving data.
+                        </p>
+                    </div>
+                    <button class="notification-close">
+                        x
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p>
+                    Messages will appear automatically
+                </p>
+                <button class="close-all" id="closeAll">
+                    Close All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
