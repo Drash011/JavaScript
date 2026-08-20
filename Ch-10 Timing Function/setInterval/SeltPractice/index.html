@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Digital Timer</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+
+    <div class="timer-box" id="timerBox">
+
+        <div class="content">
+
+            <div class="top">
+                <div class="title">
+                    <span>•</span> DIGITAL TIMER <span>•</span>
+                </div>
+            </div>
+
+            <div class="status" id="status">READY</div>
+
+            <div class="time-area">
+                <div class="time" id="display">00:00</div>
+
+                <div class="labels">
+                    <span>MINUTES</span>
+                    <span>SECONDS</span>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="control start" id="startBtn">▶ &nbsp; START</button>
+                <button class="control reset" id="resetBtn">↻ &nbsp; RESET</button>
+                <button class="control stop" id="stopBtn">■ &nbsp; STOP</button>
+            </div>
+
+            <div class="action-title">ACTION PREVIEW</div>
+
+            <div class="action-list" id="actionList">
+                <div class="empty" id="emptyMessage">
+                    Your timer actions will appear here.
+                </div>
+            </div>
+
+            <div class="hint">
+                Start • Stop • Reset — every action is saved here
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
