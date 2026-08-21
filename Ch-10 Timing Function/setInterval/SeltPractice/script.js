@@ -202,8 +202,6 @@ resetBtn.addEventListener("click", () => {
 
     updateDisplay();
 
-
-    // Clear ALL messages automatically
     clearActions();
 
     playSound();
