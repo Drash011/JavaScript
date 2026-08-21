@@ -13,7 +13,6 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 
 
-
 function formatTime(totalSeconds) {
     const minutes = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
@@ -34,73 +33,79 @@ function setStatus(text, className = "") {
     status.className = "status " + className;
 }
 
-function addAction(type) {
 
-    if (emptyMessage) {
-        emptyMessage.remove();
+function addAction() {
+
+    const currentEmptyMessage =
+        document.getElementById("emptyMessage");
+
+    if (currentEmptyMessage) {
+        currentEmptyMessage.remove();
     }
 
     const action = document.createElement("div");
 
-    let icon = "";
-    let text = "";
-    let className = "";
-
-    if (type === "started") {
-        icon = "▶";
-        text = "Timer started";
-        className = "started";
-    }
-
-    if (type === "stopped") {
-        icon = "■";
-        text = "Timer stopped";
-        className = "stopped";
-    }
-
-    if (type === "reset") {
-        icon = "↻";
-        text = "Timer reset";
-        className = "reset-action";
-    }
-
-    action.className = "action " + className;
+    action.className = "action stopped";
 
     action.innerHTML = `
-            <div class="action-icon">${icon}</div>
+        <div class="action-icon">■</div>
 
-            <div class="action-text">
-                ${text}
-                <span class="action-time">${formatTime(seconds)}</span>
-            </div>
+        <div class="action-text">
+            Timer stopped
+            <span class="action-time">
+                ${formatTime(seconds)}
+            </span>
+        </div>
 
-            <button class="delete" title="Delete action">🗑</button>
-        `;
+        <button class="delete" title="Delete action">
+            🗑
+        </button>
+    `;
+
 
     action.querySelector(".delete").addEventListener("click", () => {
+
         action.style.opacity = "0";
         action.style.transform = "translateX(20px)";
 
         setTimeout(() => {
+
             action.remove();
 
             if (actionList.children.length === 0) {
+
                 const empty = document.createElement("div");
+
                 empty.className = "empty";
                 empty.id = "emptyMessage";
                 empty.textContent =
                     "Your timer actions will appear here.";
+
                 actionList.appendChild(empty);
             }
+
         }, 220);
     });
+
 
     actionList.prepend(action);
 }
 
+
+function clearActions() {
+
+    actionList.innerHTML = `
+        <div class="empty" id="emptyMessage">
+            Your timer actions will appear here.
+        </div>
+    `;
+}
+
 function playSound() {
 
-    if (!soundOn) return;
+    if (typeof soundOn !== "undefined" && !soundOn) {
+        return;
+    }
 
     const AudioContext =
         window.AudioContext || window.webkitAudioContext;
@@ -115,18 +120,24 @@ function playSound() {
     oscillator.type = "sine";
     oscillator.frequency.value = 620;
 
-    gain.gain.setValueAtTime(.07, audio.currentTime);
+    gain.gain.setValueAtTime(
+        0.07,
+        audio.currentTime
+    );
 
     gain.gain.exponentialRampToValueAtTime(
-        .001,
-        audio.currentTime + .18
+        0.001,
+        audio.currentTime + 0.18
     );
 
     oscillator.connect(gain);
     gain.connect(audio.destination);
 
     oscillator.start();
-    oscillator.stop(audio.currentTime + .18);
+
+    oscillator.stop(
+        audio.currentTime + 0.18
+    );
 }
 
 startBtn.addEventListener("click", () => {
@@ -139,13 +150,16 @@ startBtn.addEventListener("click", () => {
     running = true;
 
     timerBox.classList.add("running");
+
     setStatus("RUNNING", "running");
 
-    addAction("started");
 
     timer = setInterval(() => {
+
         seconds++;
+
         updateDisplay();
+
     }, 1000);
 });
 
@@ -160,10 +174,15 @@ stopBtn.addEventListener("click", () => {
 
     clearInterval(timer);
 
+    timer = null;
+
     timerBox.classList.remove("running");
+
     setStatus("STOPPED", "stopped");
 
-    addAction("stopped");
+
+    addAction();
+
     playSound();
 });
 
@@ -171,17 +190,23 @@ resetBtn.addEventListener("click", () => {
 
     clearInterval(timer);
 
+    timer = null;
+
     running = false;
+
     seconds = 0;
 
     timerBox.classList.remove("running");
+
     setStatus("RESET");
 
     updateDisplay();
 
-    addAction("reset");
+
+    // Clear ALL messages automatically
+    clearActions();
+
     playSound();
 });
-
 
 updateDisplay();
