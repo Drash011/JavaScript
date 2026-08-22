@@ -109,7 +109,7 @@ function startTimer() {
 
         }
 
-    }, 1000);
+    }, 100);
 }
 
 
