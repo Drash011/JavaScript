@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Examination</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Left -->
+    <div class="left-section">
+        <div class="exam-card">
+            <div class="exam-header">
+                <div class="exam-title">
+                    <div class="exam-icon">
+                        ▤
+                    </div>
+                    <h1>Online Examination</h1>
+                </div>
+
+                <div class="question-count">
+                    <div class="question-mark">
+                        ?
+                    </div>
+                    Question
+                    <strong id="questionNumber">1</strong> of
+                    <strong>5</strong>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <div class="question-heading">
+                    <h2 id="question">
+                        Question
+                    </h2>
+                </div>
+
+                <div class="options-container">
+                    <ul>
+                        <li class="option">
+                            <input type="radio" name="answer">
+                            <span> Option 1 </span>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" name="answer">
+                            <span> Option 2 </span>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" name="answer">
+                            <span> Option 3 </span>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" name="answer">
+                            <span> Option 4 </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button type="button" id="preBtn" class="previous-btn">
+                    ← Previous
+                </button>
+                <button type="button" id="nextBtn" class="next-btn">
+                    Next →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right -->
+    <div class="right-section">
+        <div class="timer-card">
+            <div class="timer-title">
+                <div class="timer-icon">
+                    ◷
+                </div>
+                TIME REMAINING
+            </div>
+
+            <div class="timer">
+                <div id="hours">
+                    00
+                </div>
+                <b>:</b>
+                <div id="minutes">
+                    30
+                </div>
+                <b>:</b>
+                <div id="seconds">
+                    00
+                </div>
+            </div>
+
+            <div class="timer-labels">
+                <div> Hours </div>
+                <div> Min </div>
+                <div> Sec </div>
+            </div>
+        </div>
+
+        <div class="question-panel">
+            <h2> QUESTIONS </h2>
+
+            <div class="question-grid">
+                <button class="question-number current">1</button>
+                <button class="question-number review">2</button>
+                <button class="question-number answered">3</button>
+                <button class="question-number">4</button>
+                <button class="question-number">5</button>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color answered-color"></div>
+                    <div>Answered </div>
+                </div>
+
+                <div class="legend-item">
+                    <div class="legend-color current-color"></div>
+                    <div>
+                        Current Question
+                    </div>
+                </div>
+
+                <div class="legend-item">
+                    <div class="legend-color review-color"></div>
+                    <div>
+                        Marked for Review
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color unvisited-color"></div>
+                    <div> Unvisited </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="submit-modal" id="submitModal">
+        <div class="modal-box">
+            <div class="modal-icon"> ? </div>
+            <h2>Submit Examination?</h2>
+            <p>
+                Are you sure you want to submit your examination? You won't be able to change your answers after submission.
+            </p>
+            <div class="modal-buttons">
+                <button type="button" id="noBtn" class="no-btn">No</button>
+                <button type="button" id="yesBtn" class="yes-btn">Yes, Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-box">
+            <div class="success-icon">
+                <div class="check-mark">
+                    ✓
+                </div>
+            </div>
+            <h2>Examination Submitted!</h2>
+            <p> Your examination has been submitted successfully. </p>
+            <button type="button" id="doneBtn" class="done-btn">Don</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
