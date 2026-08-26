@@ -313,33 +313,73 @@ body {
 
 .question-number {
     width: 100%;
-    height: 35px;
+    height: 40px;
     background: #ed2828;
     color: #ffffff;
-    border: 1px solid #d5dce5;
+    border: 1px solid #ed2828;
     border-radius: 6px;
     font-family: inherit;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.question-number:hover {
-    color: #ed2828;
-    border-color: #ed2828;
-    background: #f7f9ff;
-}
-
-.question-number.current {
-    background-color: #2f55d4;
-    color: white;
+.question-number.unanswered {
+    background: #ed2828 !important;
+    color: #ffffff !important;
+    border: 1px solid #ed2828 !important;
 }
 
 .question-number.answered {
-    color: #ffffff;
-    background: #159447;
-    border-color: #159447;
+    background: #159447 !important;
+    color: #ffffff !important;
+    border: 1px solid #159447 !important;
+}
+
+.question-number.current-unanswered {
+    background: #ffffff !important;
+    color: #ed2828 !important;
+    border: 2px solid #ed2828 !important;
+    font-weight: 700;
+}
+
+.question-number.current-answered {
+    background: #ffffff !important;
+    color: #159447 !important;
+    border: 2px solid #159447 !important;
+    font-weight: 700;
+}
+
+.question-number:hover {
+    transform: translateY(-1px);
+}
+
+.question-number.unanswered:hover {
+    background: #d91f1f !important;
+    border-color: #d91f1f !important;
+    color: #ffffff !important;
+}
+
+.question-number.answered:hover {
+    background: #117a39 !important;
+    border-color: #117a39 !important;
+    color: #ffffff !important;
+}
+
+.question-number.current-unanswered:hover {
+    background: #fff5f5 !important;
+    border-color: #ed2828 !important;
+    color: #ed2828 !important;
+}
+
+.question-number.current-answered:hover {
+    background: #f3fff7 !important;
+    border-color: #159447 !important;
+    color: #159447 !important;
 }
 
 .legend-item {
@@ -367,6 +407,16 @@ body {
 .review-color {
     background: #ed2828;
     border-color: #ed2828;
+}
+
+.current-color {
+    background: #2860ed;
+    border-color: #2860ed;
+}
+
+.unvisited-color {
+    background: #ffffff;
+    border-color: #d1d8e1;
 }
 
 .unvisited-color {
