@@ -125,7 +125,7 @@ const allQuestion = [{
     },
     {
         question: "26. Which value is NOT considered falsy in JavaScript?",
-        option: [0, " ", 'null', '[ ]'],
+        option: [0, '" "', 'null', '[ ]'],
         answer: 3,
     },
     {
@@ -169,6 +169,7 @@ const questionGridButtons = document.querySelectorAll('.question-number');
 let currentIndex = 0;
 let selectedAnswers = new Array(allQuestion.length).fill(null);
 let visitedQuestions = new Array(allQuestion.length).fill(false);
+let score = 0;
 
 visitedQuestions[0] = true;
 
@@ -178,7 +179,6 @@ let hour = 0;
 let timerInterval = null;
 
 function startTimer() {
-
     if (timerInterval != null) {
         return;
     }
@@ -187,13 +187,14 @@ function startTimer() {
         if (hour === 0 && minute === 0 && second === 0) {
             clearInterval(timerInterval);
             timerInterval = null;
+
             hours.textContent = "00";
             minutes.textContent = "00";
             seconds.textContent = "00";
+
             submitModal.style.display = 'flex';
             return;
         }
-
 
         second--;
 
@@ -214,13 +215,14 @@ function startTimer() {
         hours.textContent = hh;
         minutes.textContent = mm;
         seconds.textContent = ss;
-
     }, 1000);
 }
 
 function loadTheQuestion() {
     visitedQuestions[currentIndex] = true;
+
     const currentQuestion = allQuestion[currentIndex];
+
     question.textContent = currentQuestion.question;
     questionNumber.textContent = currentIndex + 1;
 
@@ -247,6 +249,7 @@ function loadTheQuestion() {
         nextBtn.style.backgroundColor = "";
         nextBtn.style.borderColor = "";
     }
+
     updateQuestionGrid();
 }
 
@@ -260,7 +263,6 @@ radioButtons.forEach((radio, index) => {
 
 function updateQuestionGrid() {
     questionGridButtons.forEach((button, index) => {
-
         button.classList.remove(
             "current-unanswered",
             "current-answered",
@@ -274,6 +276,7 @@ function updateQuestionGrid() {
             } else {
                 button.classList.add("current-unanswered");
             }
+
             return;
         }
 
@@ -291,6 +294,7 @@ nextBtn.addEventListener('click', () => {
         submitModal.style.display = 'flex';
         return;
     }
+
     currentIndex++;
     visitedQuestions[currentIndex] = true;
     loadTheQuestion();
@@ -304,26 +308,69 @@ preBtn.addEventListener('click', () => {
     }
 });
 
-
 questionGridButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index >= allQuestion.length) {
             return;
         }
+
         currentIndex = index;
         visitedQuestions[currentIndex] = true;
         loadTheQuestion();
     });
 });
 
+function calculateScore() {
+    score = 0;
+
+    selectedAnswers.forEach((currentAnswer, index) => {
+        if (
+            currentAnswer !== null &&
+            currentAnswer === allQuestion[index].answer
+        ) {
+            score++;
+        }
+    });
+
+    return score;
+}
+
 noBtn.addEventListener('click', () => {
     submitModal.style.display = 'none';
 });
 
 yesBtn.addEventListener('click', () => {
+    calculateScore();
+
     submitModal.style.display = 'none';
+
     clearInterval(timerInterval);
     timerInterval = null;
+
+    let scoreElement = document.getElementById('score');
+
+    if (!scoreElement) {
+        scoreElement = document.createElement('div');
+        scoreElement.id = 'score';
+        scoreElement.style.fontSize = '24px';
+        scoreElement.style.fontWeight = '700';
+        scoreElement.style.color = '#16a34a';
+        scoreElement.style.margin = '10px 0 20px';
+        scoreElement.style.textAlign = 'center';
+
+        const message = successModal.querySelector('p');
+
+        if (message) {
+            message.insertAdjacentElement('afterend', scoreElement);
+        } else if (doneBtn) {
+            successModal.insertBefore(scoreElement, doneBtn);
+        } else {
+            successModal.appendChild(scoreElement);
+        }
+    }
+
+    scoreElement.textContent = `Your Score: ${score} / ${allQuestion.length}`;
+
     successModal.style.display = 'flex';
 });
 
