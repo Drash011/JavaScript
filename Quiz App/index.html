@@ -4,191 +4,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Examination</title>
+    <title>QuizMaster | HTML CSS JavaScript Quiz</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Left -->
-    <div class="left-section">
-        <div class="exam-card">
-            <div class="exam-header">
-                <div class="exam-title">
-                    <div class="exam-icon">
-                        ▤
-                    </div>
-                    <h1>Online Examination</h1>
-                </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
 
-                <div class="question-count">
-                    <div class="question-mark">
-                        ?
-                    </div>
-                    Question
-                    <strong id="questionNumber">1</strong> of
-                    <strong>5</strong>
-                </div>
+        <div class="brand">
+            <div class="brand-logo">
+                <i class="fa-solid fa-q"></i>
             </div>
 
-            <div class="question-section">
-                <div class="question-heading">
-                    <h2 id="question">
+            <div class="brand-name">
+                Quiz<span>Master</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+
+            <div class="header-info">
+                <i class="fa-solid fa-list"></i>
+                <span>
+                    <span id="headerTotal">30</span> Questions
+                </span>
+            </div>
+
+            <div class="header-info">
+                <i class="fa-regular fa-clock"></i>
+                <span>30:00</span>
+            </div>
+
+            <button class="submit-header-btn" onclick="openSubmitModal()">
+                <i class="fa-solid fa-check"></i>
+                Submit Quiz
+            </button>
+
+        </div>
+    </header>
+
+    <!-- QUIZ PAGE -->
+    <main class="quiz-page" id="quizPage">
+
+        <div class="quiz-layout">
+
+            <section class="question-card">
+
+                <div class="question-header">
+
+                    <div class="question-count">
                         Question
-                    </h2>
+                        <strong id="currentNumber">1</strong> of
+                        <span id="totalNumber">30</span>
+                    </div>
+
+                    <button class="review-btn" id="reviewBtn" onclick="toggleReview()">
+                        <i class="fa-regular fa-star"></i>
+                        <span>Mark for Review</span>
+                    </button>
+
                 </div>
 
-                <div class="options-container">
-                    <ul>
-                        <li class="option">
-                            <input type="radio" name="answer">
-                            <span> Option 1 </span>
-                        </li>
+                <div class="progress-section">
 
-                        <li class="option">
-                            <input type="radio" name="answer">
-                            <span> Option 2 </span>
-                        </li>
+                    <div class="progress-top">
+                        <span class="progress-title">
+                            Quiz Progress
+                        </span>
 
-                        <li class="option">
-                            <input type="radio" name="answer">
-                            <span> Option 3 </span>
-                        </li>
+                        <span class="progress-percent" id="progressPercent">
+                            0%
+                        </span>
+                    </div>
 
-                        <li class="option">
-                            <input type="radio" name="answer">
-                            <span> Option 4 </span>
-                        </li>
-                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="navigation">
-                <button type="button" id="preBtn" class="previous-btn">
-                    ← Previous
-                </button>
-                <button type="button" id="nextBtn" class="next-btn">
-                    Next →
-                </button>
-            </div>
+                <div class="question-content">
+
+                    <div class="question-category" id="questionCategory">
+                        <i class="fa-brands fa-html5"></i> HTML
+                    </div>
+
+                    <h1 class="question-title" id="questionText"></h1>
+
+                    <div class="options" id="options"></div>
+
+                </div>
+
+                <div class="navigation">
+
+                    <button class="nav-btn previous-btn" id="previousBtn" onclick="previousQuestion()">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Previous
+                    </button>
+
+                    <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()">
+                        Next
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="nav-btn submit-main-btn" id="submitMainBtn" onclick="openSubmitModal()" style="display: none;">
+                        Submit Quiz
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+
+                </div>
+            </section>
+
+            <aside class="sidebar">
+
+                <div class="side-card timer-card">
+
+                    <div class="timer-heading">
+                        <i class="fa-regular fa-clock"></i> Time Remaining
+                    </div>
+
+                    <div class="timer" id="timer">
+                        00:30:00
+                    </div>
+
+                    <div class="timer-message" id="timerMessage">
+                        Keep going! You can do it!
+                    </div>
+
+                </div>
+
+                <div class="side-card questions-card">
+
+                    <h3 class="side-title">
+                        Questions
+                    </h3>
+
+                    <div class="question-grid" id="questionGrid"></div>
+
+                </div>
+            </aside>
+
         </div>
-    </div>
+    </main>
 
-    <!-- Right -->
-    <div class="right-section">
-        <div class="timer-card">
-            <div class="timer-title">
-                <div class="timer-icon">
-                    ◷
-                </div>
-                TIME REMAINING
+    <!-- SUBMIT MODAL -->
+    <div class="modal-overlay" id="submitModal">
+
+        <div class="submit-modal">
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-question"></i>
             </div>
 
-            <div class="timer">
-                <div id="hours">
-                    00
-                </div>
-                <b>:</b>
-                <div id="minutes">
-                    30
-                </div>
-                <b>:</b>
-                <div id="seconds">
-                    00
-                </div>
-            </div>
+            <h2 class="modal-title">
+                Submit Quiz?
+            </h2>
 
-            <div class="timer-labels">
-                <div> Hours </div>
-                <div> Min </div>
-                <div> Sec </div>
-            </div>
-        </div>
-
-        <div class="question-panel">
-            <h2> QUESTIONS </h2>
-
-            <div class="question-grid">
-
-                <button class="question-number">1</button>
-                <button class="question-number">2</button>
-                <button class="question-number">3</button>
-                <button class="question-number">4</button>
-                <button class="question-number">5</button>
-                <button class="question-number">6</button>
-                <button class="question-number">7</button>
-                <button class="question-number">8</button>
-                <button class="question-number">9</button>
-                <button class="question-number">10</button>
-                <button class="question-number">11</button>
-                <button class="question-number">12</button>
-                <button class="question-number">13</button>
-                <button class="question-number">14</button>
-                <button class="question-number">15</button>
-                <button class="question-number">16</button>
-                <button class="question-number">17</button>
-                <button class="question-number">18</button>
-                <button class="question-number">19</button>
-                <button class="question-number">20</button>
-                <button class="question-number">21</button>
-                <button class="question-number">22</button>
-                <button class="question-number">23</button>
-                <button class="question-number">24</button>
-                <button class="question-number">25</button>
-                <button class="question-number">26</button>
-                <button class="question-number">27</button>
-                <button class="question-number">28</button>
-                <button class="question-number">29</button>
-                <button class="question-number">30</button>
-
-            </div>
-
-            <div class="legend">
-
-                <div class="legend-item">
-                    <div class="legend-color answered-color"></div>
-                    <div>Answered</div>
-                </div>
-
-                <div class="legend-item">
-                    <div class="legend-color review-color"></div>
-                    <div>Unanswered</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Submit Confirmation Modal -->
-    <div class="submit-modal" id="submitModal">
-        <div class="modal-box">
-            <div class="modal-icon"> ? </div>
-            <h2>Submit Examination?</h2>
-            <p>
-                Are you sure you want to submit your examination? You won't be able to change your answers after submission.
+            <p class="modal-text">
+                Are you sure you want to submit your quiz?
+                <br> You won't be able to change your answers after submitting.
             </p>
+
             <div class="modal-buttons">
-                <button type="button" id="noBtn" class="no-btn">No</button>
-                <button type="button" id="yesBtn" class="yes-btn">Yes, Submit</button>
+
+                <button class="modal-btn modal-no" onclick="closeSubmitModal()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    No, Go Back
+                </button>
+
+                <button class="modal-btn modal-yes" onclick="confirmSubmit()">
+                    Yes, Submit
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
             </div>
         </div>
     </div>
 
-    <!-- Success Modal -->
-    <div class="success-modal" id="successModal">
-        <div class="success-box">
-            <div class="success-icon">
-                <div class="check-mark">
-                    ✓
+    <!-- RESULT PAGE -->
+    <section class="result-page" id="resultPage">
+
+        <div class="result-card">
+
+            <div class="result-content">
+
+                <div class="result-icon">
+                    <i class="fa-solid fa-check"></i>
                 </div>
-            </div>
-            <h2>Examination Submitted!</h2>
-            <p> Your examination has been submitted successfully. </p>
-            <button type="button" id="doneBtn" class="done-btn">Done</button>
-        </div>
-    </div>
 
+                <h1 class="result-title">
+                    Quiz Completed!
+                </h1>
+
+                <p class="result-description">
+                    Your quiz has been successfully submitted.
+                </p>
+
+                <div class="final-score" id="finalScore">
+                    0/30
+                </div>
+
+                <div class="final-percent" id="finalPercent">
+                    0% Score
+                </div>
+
+                <div class="result-stats">
+
+                    <div class="result-stat correct">
+                        <span class="result-number" id="correctResult">
+                            0
+                        </span>
+
+                        <span class="result-label">
+                            Correct
+                        </span>
+                    </div>
+
+                    <div class="result-stat wrong">
+                        <span class="result-number" id="wrongResult">
+                            0
+                        </span>
+
+                        <span class="result-label">
+                            Wrong
+                        </span>
+                    </div>
+
+                    <div class="result-stat skipped">
+                        <span class="result-number" id="skippedResult">
+                            30
+                        </span>
+
+                        <span class="result-label">
+                            Skipped
+                        </span>
+                    </div>
+
+                </div>
+
+                <button class="done-btn" onclick="finishQuiz()">
+                    <i class="fa-solid fa-check"></i>
+                    Done
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main JavaScript -->
     <script src="js/script.js"></script>
 
 </body>

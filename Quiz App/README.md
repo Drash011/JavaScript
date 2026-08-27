@@ -1,89 +1,255 @@
-# 📝 Online Examination System
+# 🎯 QuizMaster
 
-A clean and interactive **Online Examination System** built using **HTML, CSS, and JavaScript**.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0F9D92&height=230&section=header&text=🎯%20QuizMaster&fontSize=48&fontColor=FFFFFF&fontAlignY=40&animation=fadeIn" width="100%" alt="QuizMaster Header">
+</p>
 
-The project provides a complete exam interface with multiple-choice questions, question navigation, a countdown timer, answer tracking, score calculation, and submission confirmation.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=30&pause=1200&color=0F9D92&center=true&vCenter=true&width=650&height=50&lines=Test+Your+Knowledge+🧠;Learn+%7C+Practice+%7C+Improve+🚀;Challenge+Yourself+with+QuizMaster+🎯" alt="QuizMaster Animation">
+</p>
 
-## 📸 Project Preview
+<p align="center">
+  <i>A simple and interactive quiz application built with HTML, CSS & JavaScript.</i>
+</p>
 
-![Online Examination System](image/Screenshot%202026-08-26%20123923.png)
+<br>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
+</p>
 
-## ✨ Features
+<br>
 
-- 🎯 Multiple-choice examination interface
-- 📚 30 JavaScript questions
-- ⏱️ 30-minute countdown timer
-- 🔢 Question number navigation
-- ✅ Answered / unanswered question indicators
-- 🔵 Current question highlighting
-- ◀️ Previous question button
-- ▶️ Next question button
-- 📌 Direct navigation to any question
-- 🧮 Automatic score calculation
-- ⚠️ Submit examination confirmation modal
-- 🎉 Examination success modal
-- 📊 Final score display
-- 📱 Responsive layout
-- ✨ Hover and selection effects
+<p align="center">
+  <b>📝 30 Questions</b>
+  &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <b>⏱️ 30 Minutes</b>
+  &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <b>🎯 Beginner</b>
+</p>
 
----
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+## ✨ About QuizMaster
+
+**QuizMaster** is a simple and interactive quiz application created using **HTML, CSS, and JavaScript**.
+
+The application contains multiple-choice questions based on:
+
+- 🌐 HTML
+- 🎨 CSS
+- ⚡ JavaScript
+
+Users can select answers, move between questions, mark questions for review, and submit the quiz to see their final result.
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+## 🚀 Features
+
+| Feature | Description |
+|---|---|
+| 📝 30 Questions | Contains 30 multiple-choice questions |
+| 🌐 HTML | Questions related to HTML |
+| 🎨 CSS | Questions related to CSS |
+| ⚡ JavaScript | Questions related to JavaScript |
+| ⏱️ Timer | 30-minute countdown timer |
+| 📊 Progress Bar | Shows quiz progress |
+| 🔢 Question Navigation | Quickly move to any question |
+| ⭐ Mark for Review | Mark questions for later |
+| ⬅️ Previous | Go to the previous question |
+| ➡️ Next | Move to the next question |
+| 📌 Submit Popup | Confirmation before submission |
+| 🏆 Result | Shows final quiz result |
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+## 📸 Screenshots
+
+### 📝 Quiz Page
+
+<p align="center">
+  <img src="image/quiz-page.png" width="850" alt="Quiz Page">
+</p>
+
+The main quiz page contains:
+
+- Current question
+- Four answer options
+- Quiz progress
+- Timer
+- Question navigation
+- Mark for Review button
+- Previous and Next buttons
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+### ⚠️ Submit Confirmation
+
+<p align="center">
+  <img src="image/submit-modal.png" width="700" alt="Submit Confirmation">
+</p>
+
+Before submitting the quiz, a confirmation popup appears.
+
+The user can:
+
+**No, Go Back** → Continue the quiz
+
+**Yes, Submit** → Submit the quiz and calculate the result
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+### 🏆 Quiz Result
+
+<p align="center">
+  <img src="image/quiz-result.png" width="850" alt="Quiz Result">
+</p>
+
+After submitting the quiz, the result page displays:
+
+- 🎯 Final score
+- 📊 Percentage
+- ✅ Correct answers
+- ❌ Wrong answers
+- ⏭️ Skipped questions
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider">
+</p>
+
+## ✨ Animations & Effects
+
+The QuizMaster application includes simple animations and interactive effects to make the interface more attractive.
+
+### 🖱️ Button Effects
+
+Buttons have hover effects when the mouse moves over them.
+
+Examples:
+
+- Submit Quiz
+- Next
+- Previous
+- Mark for Review
+- Question numbers
+
+### ⭐ Review Effect
+
+When a question is marked for review, its question number changes its appearance.
+
+The star icon also changes.
+
+### 📊 Progress Animation
+
+The progress bar changes as questions are answered.
+
+```text
+0%
+ ↓
+10%
+ ↓
+20%
+ ↓
+30%
+ ↓
+...
+ ↓
+100%
+```
+
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
+
+## ⏱️ Timer Effect
+
+The timer continuously counts down during the quiz.
+
+When the remaining time becomes low, the timer changes its appearance to warn the user.
+
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose |
-|---|---|
-| HTML5 | Page structure |
-| CSS3 | Styling, layout, animations and responsive design |
-| JavaScript | Exam logic and functionality |
-| DOM | Dynamic question and UI updates |
+# HTML5
 
----
+Used for:
 
-## 📁 Project Structure
+- Creating the structure of the quiz application.
 
-```text
-Online-Examination/
+# CSS3
+
+Used for:
+
+- Layout
+- Colors
+- Buttons
+- Cards
+- Responsive design
+- Animations
+- Hover effects
+
+# JavaScript
+
+Used for:
+
+- Loading questions
+- Selecting answers
+- Question navigation
+- Timer
+- Progress calculation
+- Mark for Review
+- Result calculation
+- Submit popup
+
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
+
+## 📂 Project Structure
+```
+QuizMaster/
 │
 ├── index.html
+├── style.css
+├── script.js
 │
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── images/
-│   ├── exam-preview.png
-│   ├── exam-screen.png
-│   ├── submit-modal.png
-│   └── result-modal.png
-│
-└── README.md
+└── image/
+    ├── quiz-page.png
+    ├── submit-modal.png
+    └── quiz-result.png
 ```
 
-## 🎉 Result Modal
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
 
-After successful submission, the result modal displays:
-
+## 🚀 Getting Started
+1. Clone the project
 ```
-✓
-
-Examination Submitted!
-
-Your examination has been submitted successfully.
-
-Your Score: X / 30
-
-Done
+git clone https://github.com/Drash011/JavaScript/tree/main/Quiz%20App
 ```
-The Done button closes the result modal.
+1. Open the project
+- Open the project folder in VS Code.
+1. Run the project
+- Open index.html using Live Server.
+1. Start the Quiz
+- Select an answer and start testing your knowledge! 🧠
 
----
 
-## 📄 License
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
 
-This project is created for learning and educational purposes.
+## 👨‍💻 Author
+<p align="center"> 
 
-You are free to modify, improve, and use this project for your own learning and portfolio.
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&pause=1000&color=0F9D92&center=true&vCenter=true&width=550&lines=Thanks+for+visiting!+👋;Keep+Learning+📚;Keep+Practicing+💻;Keep+Coding+🚀" alt="Footer Animation"> </p>
+
+<p align="center"> Made with ❤️ using HTML, CSS & JavaScript </p> 
+
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0F9D92&height=130&section=footer&animation=fadeIn" width="100%" alt="QuizMaster Footer"> </p> 

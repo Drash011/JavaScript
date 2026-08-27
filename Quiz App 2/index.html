@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <main class="main" id="quizScreen">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+
+                <h3> Questions </h3>
+                <span id="sidebarCount"> 1 / 30 </span>
+            </div>
+
+            <div class="question-grid" id="questionGrid">
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="dot green"></span> Answered
+                </div>
+                <div class="legend-item">
+                    <span class="dot red"></span> Not Answered
+                </div>
+                <div class="legend-item">
+                    <span class="dot gray"></span> Current
+                </div>
+            </div>
+        </aside>
+
+
+        <section class="quiz-card">
+            <div class="quiz-content">
+                <div class="question-top">
+                    <div class="category" id="category"> HTML </div>
+
+                    <div class="timer-box" id="timerBox">
+                        <span class="timer-icon"> ⏱ </span>
+                        <span id="timer"> 59 </span>
+                        <small> sec </small>
+                    </div>
+                </div>
+
+                <h2 class="question" id="question"> </h2>
+
+                <div class="options" id="options"> </div>
+
+            </div>
+
+            <div class="quiz-bottom">
+
+                <span class="progress-label"> Progress </span>
+
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"> </div>
+                </div>
+
+                <span class="bottom-number" id="bottomNumber"> 1 of 30 </span>
+
+                <button type="button" class="next-btn" id="nextBtn"> Next Question → </button>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="modal-overlay" id="completeModal">
+        <div class="complete-modal">
+            <div class="trophy">
+                🏆
+            </div>
+            <h2>
+                Quiz Complete!
+            </h2>
+            <p>
+                Great job! You have completed the HTML, CSS & JavaScript Quiz.
+            </p>
+
+            <div class="modal-score">
+                <div class="modal-stat">
+                    <strong id="modalScore"> 0/30 </strong>
+                    <span> Score </span>
+
+                </div>
+
+                <div class="modal-stat">
+                    <strong id="modalCorrect"> 0 </strong>
+                    <span> Correct </span>
+
+                </div>
+
+                <div class="modal-stat">
+                    <strong id="modalWrong"> 0 </strong>
+                    <span> Wrong </span>
+                </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="review-btn" id="reviewBtn">
+                📋 Review Answers
+            </button>
+
+                <button class="try-btn" id="tryBtn">
+                ↻ Try Again
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="review-screen" id="reviewScreen">
+        <div class="review-container">
+            <div class="review-header">
+                <h1> Question Review </h1>
+                <p> Review all your answers. </p>
+            </div>
+
+            <div class="review-summary">
+                <div class="summary-card">
+                    <strong id="reviewScore"> 0/30 </strong>
+                    <span> Your Score </span>
+                </div>
+
+                <div class="summary-card correct">
+                    <strong id="reviewCorrect"> 0 </strong>
+                    <span> Correct </span>
+                </div>
+
+                <div class="summary-card wrong">
+                    <strong id="reviewWrong"> 0 </strong>
+                    <span> Wrong </span>
+                </div>
+
+                <div class="summary-card unanswered">
+                    <strong id="reviewUnanswered"> 0 </strong>
+                    <span> Unanswered </span>
+                </div>
+            </div>
+
+            <div class="review-list" id="reviewList"> </div>
+
+            <div class="review-actions">
+                <button id="reviewRestart">
+                ↻ Try Quiz Again
+            </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
