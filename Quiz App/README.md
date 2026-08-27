@@ -246,9 +246,9 @@ git clone https://github.com/Drash011/JavaScript/tree/main/Quiz%20App
 <p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
 
 ## 👨‍💻 Author
-<p align="center"> 
-
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&pause=1000&color=0F9D92&center=true&vCenter=true&width=550&lines=Thanks+for+visiting!+👋;Keep+Learning+📚;Keep+Practicing+💻;Keep+Coding+🚀" alt="Footer Animation"> </p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&pause=1000&color=0F9D92&center=true&vCenter=true&width=550&lines=Thanks+for+visiting!;Keep+Learning;Keep+Practicing;Keep+Coding" alt="Footer Animation">
+</p>
 
 <p align="center"> Made with ❤️ using HTML, CSS & JavaScript </p> 
 
