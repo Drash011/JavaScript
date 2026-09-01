@@ -4,155 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <title>Quiz App</title>
     <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
-
 <body>
-
-    <main class="main" id="quizScreen">
-        <aside class="sidebar">
-            <div class="sidebar-top">
-
-                <h3> Questions </h3>
-                <span id="sidebarCount"> 1 / 30 </span>
-            </div>
-
-            <div class="question-grid" id="questionGrid">
-            </div>
-
-            <div class="legend">
-                <div class="legend-item">
-                    <span class="dot green"></span> Answered
-                </div>
-                <div class="legend-item">
-                    <span class="dot red"></span> Not Answered
-                </div>
-                <div class="legend-item">
-                    <span class="dot gray"></span> Current
-                </div>
-            </div>
-        </aside>
-
-
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;"></div>
+    <main class="main" id="quizScreen" aria-label="Online quiz">
         <section class="quiz-card">
             <div class="quiz-content">
                 <div class="question-top">
-                    <div class="category" id="category"> HTML </div>
-
-                    <div class="timer-box" id="timerBox">
-                        <span class="timer-icon"> ⏱ </span>
-                        <span id="timer"> 59 </span>
-                        <small> sec </small>
+                    <div class="category" id="category">HTML</div>
+                    <div class="timer-box" id="timerBox" aria-live="polite">
+                        <span class="timer-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><span id="timer">59</span><small>sec</small>
                     </div>
                 </div>
-
-                <h2 class="question" id="question"> </h2>
-
-                <div class="options" id="options"> </div>
-
+                <h2 class="question" id="question"></h2>
+                <div class="options" id="options"></div>
             </div>
-
             <div class="quiz-bottom">
-
-                <span class="progress-label"> Progress </span>
-
+                <span class="progress-label">Progress</span>
                 <div class="progress-track">
-                    <div class="progress-bar" id="progressBar"> </div>
+                    <div class="progress-bar" id="progressBar"></div>
                 </div>
-
-                <span class="bottom-number" id="bottomNumber"> 1 of 30 </span>
-
-                <button type="button" class="next-btn" id="nextBtn"> Next Question → </button>
+                <span class="bottom-number" id="bottomNumber">1 of 30</span>
+                <button type="button" class="next-btn" id="nextBtn">Next Question <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
             </div>
         </section>
     </main>
 
-
-    <div class="modal-overlay" id="completeModal">
-        <div class="complete-modal">
-            <div class="trophy">
-                🏆
-            </div>
-            <h2>
-                Quiz Complete!
-            </h2>
-            <p>
-                Great job! You have completed the HTML, CSS & JavaScript Quiz.
-            </p>
-
-            <div class="modal-score">
-                <div class="modal-stat">
-                    <strong id="modalScore"> 0/30 </strong>
-                    <span> Score </span>
-
-                </div>
-
-                <div class="modal-stat">
-                    <strong id="modalCorrect"> 0 </strong>
-                    <span> Correct </span>
-
-                </div>
-
-                <div class="modal-stat">
-                    <strong id="modalWrong"> 0 </strong>
-                    <span> Wrong </span>
-                </div>
-            </div>
-
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="modal">
+            <div class="modal-icon confirm-icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></div>
+            <h2 id="confirmTitle">Are you sure you want to submit?</h2>
+            <p>Your quiz will be submitted and your final result will be displayed. You can’t change your answers after submission.</p>
             <div class="modal-buttons">
-                <button class="review-btn" id="reviewBtn">
-                📋 Review Answers
-            </button>
-
-                <button class="try-btn" id="tryBtn">
-                ↻ Try Again
-            </button>
+                <button type="button" class="modal-btn btn-no" id="noBtn"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> No, Continue</button>
+                <button type="button" class="modal-btn btn-yes" id="yesBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Yes, Submit</button>
             </div>
         </div>
     </div>
 
-    <section class="review-screen" id="reviewScreen">
-        <div class="review-container">
-            <div class="review-header">
-                <h1> Question Review </h1>
-                <p> Review all your answers. </p>
+    <!-- Result Modal -->
+    <div class="modal-overlay" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <div class="modal result-modal">
+            <div class="modal-icon result-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+            <h2 id="resultTitle">Quiz Submitted!</h2>
+            <p class="result-subtitle">Your result has been calculated successfully.</p>
+            <div class="result-score">
+                <strong id="resultScore">0 / 30</strong>
+                <span>Final Score</span>
             </div>
-
-            <div class="review-summary">
-                <div class="summary-card">
-                    <strong id="reviewScore"> 0/30 </strong>
-                    <span> Your Score </span>
-                </div>
-
-                <div class="summary-card correct">
-                    <strong id="reviewCorrect"> 0 </strong>
-                    <span> Correct </span>
-                </div>
-
-                <div class="summary-card wrong">
-                    <strong id="reviewWrong"> 0 </strong>
-                    <span> Wrong </span>
-                </div>
-
-                <div class="summary-card unanswered">
-                    <strong id="reviewUnanswered"> 0 </strong>
-                    <span> Unanswered </span>
-                </div>
+            <div class="result-stats">
+                <div class="stat"><strong id="submittedCount">30</strong><span>Submitted</span></div>
+                <div class="stat right"><strong id="rightCount">0</strong><span>Right</span></div>
+                <div class="stat wrong"><strong id="wrongCount">0</strong><span>Wrong</span></div>
+                <div class="stat skipped"><strong id="skippedCount">0</strong><span>Skipped</span></div>
             </div>
-
-            <div class="review-list" id="reviewList"> </div>
-
-            <div class="review-actions">
-                <button id="reviewRestart">
-                ↻ Try Quiz Again
-            </button>
-            </div>
+            <button type="button" class="done-btn" id="doneBtn">Done <i class="fa-solid fa-check" aria-hidden="true"></i></button>
         </div>
-    </section>
+    </div>
 
     <script src="js/script.js"></script>
 

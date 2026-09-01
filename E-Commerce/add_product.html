@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg ecommerce-navbar">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+            E-Commerce
+        </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="add_product.html">
+                        Add Product
+                    </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_products.html">
+                        View Products
+                    </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="form-wrapper">
+
+            <div class="form-title">
+                <h1>Add Product</h1>
+                <div class="title-line"></div>
+                <p>Enter the details of your new product</p>
+            </div>
+
+            <form id="productForm">
+
+                <div class="row g-4">
+
+                    <!-- Product Name -->
+                    <div class="col-md-6">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" id="productName" class="form-control" placeholder="Enter product name">
+                        <span id="productNameError" class="error"></span>
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="col-md-6">
+                        <label class="form-label">Category</label>
+
+                        <select id="category" class="form-select">
+                        <option value="" selected>Select category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Shoes">Shoes</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+
+                        <span id="categoryError" class="error"></span>
+                    </div>
+
+
+                    <!-- Price -->
+                    <div class="col-md-4">
+                        <label class="form-label">Price</label>
+
+                        <div class="price-input">
+                            <span>₹</span>
+                            <input type="number" id="price" placeholder="0.00">
+                        </div>
+
+                        <span id="priceError" class="error"></span>
+                    </div>
+
+
+                    <!-- Quantity -->
+                    <div class="col-md-4">
+                        <label class="form-label">Quantity</label>
+
+                        <input type="number" id="quantity" class="form-control" placeholder="Enter quantity">
+
+                        <span id="quantityError" class="error"></span>
+                    </div>
+
+
+                    <!-- Brand -->
+                    <div class="col-md-4">
+                        <label class="form-label">Brand</label>
+
+                        <input type="text" id="brand" class="form-control" placeholder="Enter brand">
+
+                        <span id="brandError" class="error"></span>
+                    </div>
+
+
+                    <!-- Product Image -->
+                    <div class="col-12">
+
+                        <label class="form-label">Product Image</label>
+
+                        <div class="file-wrapper">
+
+                            <input type="file" id="productImage" accept="image/png, image/jpeg, image/jpg">
+
+                            <label for="productImage" class="file-button">
+                            Choose File
+                        </label>
+
+                            <span id="file-name">
+                            No file chosen
+                        </span>
+
+                        </div>
+
+                        <small>PNG, JPG, JPEG up to 2MB</small>
+
+                        <span id="imageError" class="error"></span>
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="col-12">
+
+                        <label class="form-label">Product Description</label>
+
+                        <textarea id="description" class="form-control" rows="4" placeholder="Write product description..."></textarea>
+
+                        <span id="descriptionError" class="error"></span>
+
+                    </div>
+
+
+                    <!-- Product Status -->
+                    <div class="col-md-6">
+
+                        <label class="form-label">Product Status</label>
+
+                        <div class="status-options">
+
+                            <label class="status available">
+                            <input type="radio" name="status" value="Available">
+                            <span>Available</span>
+                        </label>
+
+                            <label class="status out-stock">
+                            <input type="radio" name="status" value="Out of Stock">
+                            <span>Out of Stock</span>
+                        </label>
+
+                        </div>
+
+                        <span id="statusError" class="error"></span>
+
+                    </div>
+
+
+                    <!-- Product Colors -->
+                    <div class="col-12">
+
+                        <label class="form-label">Product Colors</label>
+
+                        <div class="color-options">
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="Black">
+                            <span class="color-box black"></span>
+                            <span>Black</span>
+                        </label>
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="White">
+                            <span class="color-box white"></span>
+                            <span>White</span>
+                        </label>
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="Green">
+                            <span class="color-box green"></span>
+                            <span>Green</span>
+                        </label>
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="Blue">
+                            <span class="color-box blue"></span>
+                            <span>Blue</span>
+                        </label>
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="Red">
+                            <span class="color-box red"></span>
+                            <span>Red</span>
+                        </label>
+
+                            <label class="color-item">
+                            <input type="checkbox" name="colors" value="Yellow">
+                            <span class="color-box yellow"></span>
+                            <span>Yellow</span>
+                        </label>
+
+                        </div>
+
+                        <span id="colorError" class="error"></span>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="col-12">
+
+                        <div class="button-area">
+
+                            <button type="reset" class="btn reset-btn">
+                            Reset
+                        </button>
+
+                            <button type="submit" class="btn add-btn">
+                            <span>+</span> Add Product
+                        </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+</html>

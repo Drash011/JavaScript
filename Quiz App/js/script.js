@@ -354,32 +354,77 @@ function startTimer() {
         return;
     }
 
+    let startTime = Date.now();
+    let totalTime = (hour * 60 * 60) + (minute * 60) + second;
+
     updateTimer();
 
     timerInterval = setInterval(function() {
-        if (hour === 0 && minute === 0 && second === 0) {
+        let currentTime = Date.now();
+        let timePassed = Math.floor((currentTime - startTime) / 1000);
+        let remainingTime = totalTime - timePassed;
+
+        if (remainingTime <= 0) {
             clearInterval(timerInterval);
             timerInterval = null;
-            timer.textContent = "00:00";
+
+            hour = 0;
+            minute = 0;
+            second = 0;
+
+            updateTimer();
+
             timerMessage.textContent = "Time is over!";
             calculateResult();
             return;
         }
 
-        second--;
-
-        if (second < 0) {
-            second = 59;
-            minute--;
-        }
-
-        if (minute < 0) {
-            minute = 59;
-            hour--;
-        }
+        hour = Math.floor(remainingTime / 3600);
+        minute = Math.floor((remainingTime % 3600) / 60);
+        second = remainingTime % 60;
 
         updateTimer();
-    }, 1000);
+    }, 200);
+}
+
+function updateTimer() {
+    let ss;
+    let mm;
+    let hh;
+
+    if (second < 10) {
+        ss = "0" + second;
+    } else {
+        ss = second;
+    }
+
+    if (minute < 10) {
+        mm = "0" + minute;
+    } else {
+        mm = minute;
+    }
+
+    if (hour < 10) {
+        hh = "0" + hour;
+    } else {
+        hh = hour;
+    }
+
+    timer.textContent = hh + ":" + mm + ":" + ss;
+
+    timer.classList.remove("warning", "danger");
+
+    let totalSeconds = hour * 3600 + minute * 60 + second;
+
+    if (totalSeconds <= 60) {
+        timer.classList.add("danger");
+        timerMessage.textContent = "Hurry! Less than 1 minute left.";
+    } else if (totalSeconds <= 5 * 60) {
+        timer.classList.add("warning");
+        timerMessage.textContent = "Time is running low.";
+    } else {
+        timerMessage.textContent = "Keep going! You can do it!";
+    }
 }
 
 function updateTimer() {

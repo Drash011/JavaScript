@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+    .ecommerce-navbar {
+        padding: 12px 0;
+    }
+    .ecommerce-navbar .navbar-brand {
+        font-size: 22px;
+    }
+    .ecommerce-navbar .nav-link {
+        margin-left: 0;
+    }
+    .form-wrapper {
+        padding: 35px 18px 50px;
+    }
+    .form-title {
+        margin-bottom: 35px;
+    }
+    .form-title h1 {
+        font-size: 30px;
+    }
+    .form-title p {
+        font-size: 14px;
+    }
+    .button-area {
+        justify-content: stretch;
+        margin-top: 10px;
+    }
+    .button-area .btn {
+        width: 100%;
+    }
+    .status-options {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title h1 {
+        font-size: 27px;
+    }
+    .status-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .status {
+        width: 100%;
+    }
+    .button-area {
+        flex-direction: column;
+    }
+    .button-area .btn {
+        width: 100%;
+    }
+    .file-button {
+        padding: 0 13px;
+    }
+    #file-name {
+        padding-left: 12px;
+        font-size: 14px;
+    }
+}
