@@ -1,11 +1,11 @@
 # 🎯 QuizMaster
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0F9D92&height=230&section=header&text=🎯%20QuizMaster&fontSize=48&fontColor=FFFFFF&fontAlignY=40&animation=fadeIn" width="100%" alt="QuizMaster Header">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0F9D92&height=180&section=header&text=🎯%20QuizMaster&fontSize=48&fontColor=FFFFFF&fontAlignY=30&animation=fadeIn" width="100%" alt="QuizMaster Header">
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=30&pause=1200&color=0F9D92&center=true&vCenter=true&width=650&height=50&lines=Test+Your+Knowledge+🧠;Learn+%7C+Practice+%7C+Improve+🚀;Challenge+Yourself+with+QuizMaster+🎯" alt="QuizMaster Animation">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=30&pause=1200&color=0F9D92&center=true&vCenter=true&width=650&height=50&lines=Test+Your+Knowledge+%F0%9F%A7%A0;Learn+%7C+Practice+%7C+Improve+%F0%9F%9A%80;Challenge+Yourself+with+QuizMaster+%F0%9F%8E%AF" alt="QuizMaster Animation">
 </p>
 
 <p align="center">
@@ -246,9 +246,9 @@ git clone https://github.com/Drash011/JavaScript/tree/main/Quiz%20App
 <p align="center"> <img src="https://capsule-render.vercel.app/api?type=rect&color=0F9D92&height=2&section=header" width="100%" alt="divider"> </p>
 
 ## 👨‍💻 Author
-<p align="center"> 
-
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&pause=1000&color=0F9D92&center=true&vCenter=true&width=550&lines=Thanks+for+visiting!+👋;Keep+Learning+📚;Keep+Practicing+💻;Keep+Coding+🚀" alt="Footer Animation"> </p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&pause=1000&color=0F9D92&center=true&vCenter=true&width=550&lines=Thanks+for+visiting!;Keep+Learning;Keep+Practicing;Keep+Coding" alt="Footer Animation">
+</p>
 
 <p align="center"> Made with ❤️ using HTML, CSS & JavaScript </p> 
 
