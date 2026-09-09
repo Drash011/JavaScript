@@ -1058,7 +1058,7 @@ body {
 }
 
 .product-table thead {
-    background: #f3f6f1;
+    background: #e6f0df;
 }
 
 .product-table th {
@@ -1091,7 +1091,7 @@ body {
 }
 
 .product-table tbody tr:hover {
-    background: #fbfdf9;
+    background: #f6feeddd;
 }
 
 .id-badge {
