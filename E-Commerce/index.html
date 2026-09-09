@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce | Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg ecommerce-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand brand-logo" href="index.html">
+                <span class="brand-icon">
+                    <i class="bi bi-bag-heart-fill"></i>
+                </span>
+
+                <span class="brand-text">
+                    E-Commerce
+                </span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto nav-menu">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_product.html">
+                            <i class="bi bi-plus-circle"></i> Add Product
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_products.html">
+                            <i class="bi bi-grid"></i> View Products
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-right">
+
+                    <div class="nav-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="navbarSearch" placeholder="Search products...">
+                    </div>
+
+                    <button class="user-btn">
+                        <i class="bi bi-person"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="shop-hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <span class="hero-tag">
+                        <i class="bi bi-stars"></i>
+                        SMART SHOPPING EXPERIENCE
+                    </span>
+
+                    <h1>
+                        Shop Smarter.<br>
+                        <span>Live Better.</span>
+                    </h1>
+
+                    <p>
+                        Discover amazing products carefully selected to make your everyday life better.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#productsSection" class="hero-primary-btn">
+                            Shop Now
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <a href="add_product.html" class="hero-secondary-btn">
+                            <i class="bi bi-plus-circle"></i> Add Product
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong id="heroProductCount">0+</strong>
+                            <span>Products</span>
+                        </div>
+
+                        <div>
+                            <strong id="heroCategoryCount">0+</strong>
+                            <span>Categories</span>
+                        </div>
+
+                        <div>
+                            <strong>24/7</strong>
+                            <span>Support</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="hero-main-card">
+
+                        <span class="hero-card-label">
+                            FEATURED PRODUCTS
+                        </span>
+
+                        <div class="hero-product-preview">
+
+                            <div class="hero-product-image" id="heroProductImage">
+                                <i class="bi bi-bag"></i>
+                            </div>
+
+                            <div class="hero-product-info">
+                                <span>Trending Now</span>
+
+                                <h3 id="heroProductName">
+                                    Explore Our Products
+                                </h3>
+
+                                <strong id="heroProductPrice">₹0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="hero-floating-badge badge-one">
+                            <i class="bi bi-check-circle-fill"></i> Quality Products
+                        </div>
+
+                        <div class="hero-floating-badge badge-two">
+                            <i class="bi bi-lightning-charge-fill"></i> Fast & Easy
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="home-stats-section">
+
+        <div class="container">
+
+            <div class="home-stats">
+
+                <div class="home-stat-card">
+
+                    <div class="home-stat-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Products</span>
+                        <h3 id="totalHomeProducts">0</h3>
+                    </div>
+
+                </div>
+
+                <div class="home-stat-card">
+
+                    <div class="home-stat-icon green-stat">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div>
+                        <span>Available Now</span>
+                        <h3 id="availableHomeProducts">0</h3>
+                    </div>
+
+                </div>
+
+                <div class="home-stat-card">
+
+                    <div class="home-stat-icon gold-stat">
+                        <i class="bi bi-grid"></i>
+                    </div>
+
+                    <div>
+                        <span>Categories</span>
+                        <h3 id="homeCategories">0</h3>
+                    </div>
+
+                </div>
+
+                <div class="home-stat-card">
+
+                    <div class="home-stat-icon red-stat">
+                        <i class="bi bi-x-circle"></i>
+                    </div>
+
+                    <div>
+                        <span>Out of Stock</span>
+                        <h3 id="outStockHomeProducts">0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="home-products-section" id="productsSection">
+
+        <div class="container">
+
+            <div class="products-section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE PRODUCTS
+                    </span>
+
+                    <h2>
+                        Discover Our Collection
+                    </h2>
+
+                    <p>
+                        Browse all products available in our store.
+                    </p>
+
+                </div>
+
+                <a href="view_products.html" class="view-all-link">
+                    Manage Products
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="home-search-filter">
+
+                <div class="home-product-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="homeProductSearch" placeholder="Search products...">
+                </div>
+
+                <div class="category-filters" id="categoryFilters"></div>
+
+            </div>
+
+            <div class="row g-4" id="displayProducts"></div>
+
+            <div class="home-empty-products" id="homeEmptyProducts">
+
+                <div class="home-empty-icon">
+                    <i class="bi bi-bag-x"></i>
+                </div>
+
+                <h3>No Products Found</h3>
+
+                <p>
+                    Add your first product and start building your ShopVerse store.
+                </p>
+
+                <a href="add_product.html" class="home-add-product-btn">
+                    <i class="bi bi-plus-lg"></i> Add Product
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROMOTIONAL BANNER -->
+    <section class="promo-section">
+
+        <div class="container">
+
+            <div class="promo-banner">
+
+                <div class="promo-content">
+
+                    <span>SHOPVERSE COLLECTION</span>
+
+                    <h2>
+                        Everything You Need.<br> All in One Place.
+                    </h2>
+
+                    <p>
+                        Explore products across different categories and find exactly what you're looking for.
+                    </p>
+
+                    <a href="#productsSection" class="promo-btn">
+                        Explore Products
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <div class="promo-decoration">
+
+                    <div class="promo-circle circle-one"></div>
+
+                    <div class="promo-circle circle-two"></div>
+
+                    <div class="promo-box box-one">
+                        <i class="bi bi-bag-heart"></i>
+                    </div>
+
+                    <div class="promo-box box-two">
+                        <i class="bi bi-stars"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
