@@ -564,24 +564,24 @@ JavaScript powers the dynamic behavior of the application.
 <div align="center">
 
 ```text
-                🏠 HOME
-                   │
-          ┌────────┼────────┐
-          ▼        ▼        ▼
-        🔍       🏷️       🛍️
-      SEARCH    FILTER    DETAILS
-          │                 │
-          └────────┬────────┘
-                   ▼
-               📦 PRODUCTS
-                   │
-             ┌─────┼─────┐
-             ▼     ▼     ▼
-            ✏️    🗑️    👀
-           EDIT  DELETE  VIEW
-                   │
-                   ▼
-               ➕ ADD PRODUCT
+🏠 HOME
+│
+┌────────┼────────┐
+▼        ▼        ▼
+🔍       🏷️       🛍️
+SEARCH    FILTER    DETAILS
+│                 │
+└────────┬────────┘
+▼
+📦 PRODUCTS
+│
+┌─────┼─────┐
+▼     ▼     ▼
+✏️    🗑️    👀
+EDIT  DELETE  VIEW
+│
+▼
+➕ ADD PRODUCT
 ```
 
 </div>
@@ -597,6 +597,7 @@ E-Commerce/
 ├── 📄 add-product.html
 ├── 📄 products.html
 ├── 📄 product-details.html
+├── 📄 edit-product.html
 │
 ├── 📁 css/
 │   ├── 📄 style.css
@@ -606,6 +607,7 @@ E-Commerce/
 │   ├── 📄 script.js
 │   ├── 📄 add-product.js
 │   ├── 📄 view-products.js
+│   ├── 📄 edit-products.js
 │   └── 📄 product-details.js
 │
 ├── 📁 images/

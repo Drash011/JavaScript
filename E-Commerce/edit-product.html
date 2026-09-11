@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce | Edit Product</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg ecommerce-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand brand-logo" href="index.html">
+                <span class="brand-icon">
+                    <i class="bi bi-bag-heart-fill"></i>
+                </span>
+
+                <span class="brand-text">E-Commerce</span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto nav-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_product.html" id="addProductLink">
+                            <i class="bi bi-plus-circle"></i> Add Product
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_products.html">
+                            <i class="bi bi-grid"></i> View Products
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-right">
+
+                    <div class="nav-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search products...">
+                    </div>
+
+                    <button class="user-btn">
+                        <i class="bi bi-person"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- MAIN SECTION -->
+    <main class="add-product-page">
+
+        <div class="container">
+
+            <div class="add-product-layout">
+
+                <div class="product-side-banner">
+
+                    <div class="banner-content">
+
+                        <div class="banner-top-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+
+                        <span class="banner-label">PRODUCT MANAGEMENT</span>
+
+                        <h1>
+                            Create Something
+                            <span>Amazing.</span>
+                        </h1>
+
+                        <p>
+                            Add your products and build a beautiful shopping experience for your customers.
+                        </p>
+
+                        <div class="banner-features">
+
+                            <div class="banner-feature">
+
+                                <div class="feature-icon">
+                                    <i class="bi bi-lightning-charge-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h6>Quick & Easy</h6>
+                                    <p>Add products in just a few steps.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="banner-feature">
+
+                                <div class="feature-icon">
+                                    <i class="bi bi-bar-chart-line-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h6>Grow Your Store</h6>
+                                    <p>Manage your products effortlessly.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="banner-feature">
+
+                                <div class="feature-icon">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+
+                                <div>
+                                    <h6>Simple & Secure</h6>
+                                    <p>Your product information stays safe.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="banner-decoration">
+
+                        <div class="decor-box decor-box-one"></div>
+
+                        <div class="decor-box decor-box-two"></div>
+
+                        <div class="decor-box decor-box-three"></div>
+
+                        <div class="shopping-bag">
+                            <i class="bi bi-bag-heart"></i>
+
+                            <span>
+                                Good Things
+                                <br>
+                                Await
+                            </span>
+                        </div>
+
+                        <div class="decor-circle circle-one"></div>
+
+                        <div class="decor-circle circle-two"></div>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT FORM -->
+                <div class="form-wrapper">
+
+                    <div class="form-title">
+
+                        <div class="form-title-icon">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+
+                        <div>
+                            <h1>Edit Product</h1>
+                            <p>Update your product details</p>
+                        </div>
+
+                    </div>
+
+                    <form id="AllProducts" class="row g-4">
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Product Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <i class="bi bi-tag"></i>
+                                <input type="text" id="productName" class="form-control" placeholder="Enter product name">
+                            </div>
+
+                            <span id="productNameError" class="error"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Category
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <i class="bi bi-grid"></i>
+
+                                <select id="category" class="form-select">
+                                    <option value="" selected>Select category</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Clothing">Clothing</option>
+                                    <option value="Shoes">Shoes</option>
+                                    <option value="Accessories">Accessories</option>
+                                </select>
+                            </div>
+
+                            <span id="categoryError" class="error"></span>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">
+                                Price
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <span class="rupee-symbol">₹</span>
+                                <input type="number" id="price" class="form-control" placeholder="0.00">
+                            </div>
+
+                            <span id="priceError" class="error"></span>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">
+                                Quantity
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <i class="bi bi-box"></i>
+                                <input type="number" id="quantity" class="form-control" placeholder="Enter quantity">
+                            </div>
+
+                            <span id="quantityError" class="error"></span>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">
+                                Brand
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <i class="bi bi-bookmark"></i>
+                                <input type="text" id="brand" class="form-control" placeholder="Enter brand">
+                            </div>
+
+                            <span id="brandError" class="error"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">
+                                Product Image
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-group-custom">
+                                <i class="bi bi-link-45deg"></i>
+                                <input type="url" id="productImage" class="form-control" placeholder="Enter image URL">
+                                <i class="bi bi-image right-icon"></i>
+                            </div>
+
+                            <small class="form-help">
+                                Enter a valid image URL (PNG, JPG, JPEG, etc.)
+                            </small>
+
+                            <span id="imageError" class="error"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">
+                                Product Description
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="textarea-custom">
+                                <i class="bi bi-file-text"></i>
+                                <textarea id="description" class="form-control" rows="4" placeholder="Write product description..."></textarea>
+                            </div>
+
+                            <span id="descriptionError" class="error"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Product Status
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="status-options">
+
+                                <label class="status available">
+                                    <input type="radio" name="status" value="Available">
+                                    <span class="status-dot"></span>
+                                    <span>Available</span>
+                                </label>
+
+                                <label class="status out-stock">
+                                    <input type="radio" name="status" value="Out of Stock">
+                                    <span class="status-dot"></span>
+                                    <span>Out of Stock</span>
+                                </label>
+
+                            </div>
+
+                            <span id="statusError" class="error"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label color-title">
+                                Product Colors <span>*</span>
+                            </label>
+
+                            <div class="color-options premium-colors">
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Black">
+                                    <span class="color-box black"></span>
+                                    <span class="color-name">Black</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="White">
+                                    <span class="color-box white"></span>
+                                    <span class="color-name">White</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Gray">
+                                    <span class="color-box gray"></span>
+                                    <span class="color-name">Gray</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Green">
+                                    <span class="color-box green"></span>
+                                    <span class="color-name">Green</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Blue">
+                                    <span class="color-box blue"></span>
+                                    <span class="color-name">Blue</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Red">
+                                    <span class="color-box red"></span>
+                                    <span class="color-name">Red</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Yellow">
+                                    <span class="color-box yellow"></span>
+                                    <span class="color-name">Yellow</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Orange">
+                                    <span class="color-box orange"></span>
+                                    <span class="color-name">Orange</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Purple">
+                                    <span class="color-box purple"></span>
+                                    <span class="color-name">Purple</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Pink">
+                                    <span class="color-box pink"></span>
+                                    <span class="color-name">Pink</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Brown">
+                                    <span class="color-box brown"></span>
+                                    <span class="color-name">Brown</span>
+                                </label>
+
+                                <label class="color-item">
+                                    <input type="checkbox" name="colors" value="Beige">
+                                    <span class="color-box beige"></span>
+                                    <span class="color-name">Beige</span>
+                                </label>
+
+                            </div>
+
+                            <span id="colorError" class="error"></span>
+                        </div>
+
+                        <div class="col-12">
+
+                            <div class="form-divider"></div>
+
+                            <div class="button-area">
+
+                                <button type="reset" class="btn reset-btn">
+                                    <i class="bi bi-arrow-counterclockwise"></i>
+                                    Reset
+                                </button>
+
+                                <button type="submit" class="btn add-btn">
+                                    <span>
+                                        <i class="bi bi-pencil mt-1"></i>
+                                        Update Product
+                                    </span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/edit-product.js"></script>
+
+</body>
+
+</html>

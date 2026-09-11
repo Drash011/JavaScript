@@ -1,56 +1,6 @@
 const productForm = document.getElementById("AllProducts");
-const urlParams = new URLSearchParams(window.location.search);
-const editIndex = urlParams.get("edit");
+
 let allProducts = JSON.parse(localStorage.getItem("products")) || [];
-
-const isEditMode =
-    editIndex !== null &&
-    editIndex !== "" &&
-    !isNaN(editIndex) &&
-    allProducts[Number(editIndex)] !== undefined;
-
-
-if (isEditMode) {
-    const product = allProducts[Number(editIndex)];
-
-    document.querySelector(".form-title h1").innerText = "Edit Product";
-
-    document.querySelector(".form-title p").innerText =
-        "Update your product details";
-
-    document.querySelector(".add-btn").innerHTML = "Update Product";
-
-    document.getElementById("productName").value =
-        product.productName || "";
-
-    document.getElementById("category").value =
-        product.category || "";
-
-    document.getElementById("price").value =
-        product.price || "";
-
-    document.getElementById("quantity").value =
-        product.quantity || "";
-
-    document.getElementById("brand").value =
-        product.brand || "";
-
-    document.getElementById("productImage").value =
-        product.productImage || "";
-
-    document.getElementById("description").value =
-        product.description || "";
-
-    document.querySelectorAll('input[name="status"]').forEach((input) => {
-        input.checked = input.value === product.status;
-    });
-
-    document.querySelectorAll('input[name="colors"]').forEach((input) => {
-        input.checked =
-            product.colors && product.colors.includes(input.value);
-    });
-}
-
 
 productForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -81,6 +31,7 @@ productForm.addEventListener("submit", (e) => {
 
     let isValid = true;
 
+
     if (productName.value.trim() === "") {
         productName.classList.add("border-danger");
 
@@ -88,6 +39,7 @@ productForm.addEventListener("submit", (e) => {
             "* Please enter product name";
 
         isValid = false;
+
     } else if (productName.value.trim().length < 3) {
         productName.classList.add("border-danger");
 
@@ -96,6 +48,7 @@ productForm.addEventListener("submit", (e) => {
 
         isValid = false;
     }
+
 
     if (category.value === "") {
         category.classList.add("border-danger");
@@ -106,6 +59,7 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (price.value === "") {
         price.classList.add("border-danger");
 
@@ -113,6 +67,7 @@ productForm.addEventListener("submit", (e) => {
             "* Please enter product price";
 
         isValid = false;
+
     } else if (Number(price.value) <= 0) {
         price.classList.add("border-danger");
 
@@ -122,6 +77,7 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (quantity.value === "") {
         quantity.classList.add("border-danger");
 
@@ -129,6 +85,7 @@ productForm.addEventListener("submit", (e) => {
             "* Please enter product quantity";
 
         isValid = false;
+
     } else if (Number(quantity.value) <= 0) {
         quantity.classList.add("border-danger");
 
@@ -138,6 +95,7 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (brand.value.trim() === "") {
         brand.classList.add("border-danger");
 
@@ -145,6 +103,7 @@ productForm.addEventListener("submit", (e) => {
             "* Please enter brand name";
 
         isValid = false;
+
     } else if (brand.value.trim().length < 2) {
         brand.classList.add("border-danger");
 
@@ -153,6 +112,7 @@ productForm.addEventListener("submit", (e) => {
 
         isValid = false;
     }
+
 
     if (productImage.value.trim() === "") {
         productImage.classList.add("border-danger");
@@ -163,6 +123,7 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (description.value.trim() === "") {
         description.classList.add("border-danger");
 
@@ -170,6 +131,7 @@ productForm.addEventListener("submit", (e) => {
             "* Please write product description";
 
         isValid = false;
+
     } else if (description.value.trim().length < 10) {
         description.classList.add("border-danger");
 
@@ -179,12 +141,14 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (!selectedStatus) {
         document.getElementById("statusError").innerText =
             "* Please select product status";
 
         isValid = false;
     }
+
 
     if (selectedColors.length === 0) {
         document.getElementById("colorError").innerText =
@@ -193,9 +157,11 @@ productForm.addEventListener("submit", (e) => {
         isValid = false;
     }
 
+
     if (!isValid) {
         return;
     }
+
 
     const product = {
         id: Math.floor(Math.random() * 999999) + 10000,
@@ -207,96 +173,39 @@ productForm.addEventListener("submit", (e) => {
         productImage: productImage.value.trim(),
         description: description.value.trim(),
         status: selectedStatus.value,
-        colors: [...selectedColors].map((color) => color.value),
+        colors: [...selectedColors].map((color) => color.value)
     };
 
-    if (isEditMode) {
-        allProducts[Number(editIndex)] = product;
 
-        localStorage.setItem("products", JSON.stringify(allProducts));
+    allProducts.push(product);
 
-        Toastify({
-            text: "✓ Product updated successfully!",
-            duration: 4000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
+    localStorage.setItem(
+        "products",
+        JSON.stringify(allProducts)
+    );
 
-            style: {
-                background: `
-                    linear-gradient(
-                        135deg,
-                        rgba(24, 82, 60, 0.82),
-                        rgba(47, 125, 91, 0.68)
-                    )
-                `,
+    Toastify({
+        text: "✓ Product added successfully!",
+        duration: 4000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "linear-gradient(135deg, rgba(24, 82, 60, 0.82), rgba(47, 125, 91, 0.68))",
+            backdropFilter: "blur(25px) saturate(180%)",
+            WebkitBackdropFilter: "blur(25px) saturate(180%)",
+            border: "1px solid rgba(255, 255, 255, 0.32)",
+            borderRadius: "18px",
+            boxShadow: "0 15px 45px rgba(22, 70, 50, 0.25), 0 5px 20px rgba(31, 101, 73, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35)",
+            color: "#ffffff",
+            padding: "18px 25px",
+            fontSize: "15px",
+            fontWeight: "600",
+            letterSpacing: "0.2px",
+            minWidth: "320px"
+        }
+    }).showToast();
 
-                backdropFilter: "blur(25px) saturate(180%)",
-                WebkitBackdropFilter: "blur(25px) saturate(180%)",
-                border: "1px solid rgba(255, 255, 255, 0.32)",
-                borderRadius: "18px",
-
-                boxShadow: `
-                    0 15px 45px rgba(22, 70, 50, 0.25),
-                    0 5px 20px rgba(31, 101, 73, 0.18),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.35)
-                `,
-
-                color: "#ffffff",
-                padding: "18px 25px",
-                fontSize: "15px",
-                fontWeight: "600",
-                letterSpacing: "0.2px",
-                minWidth: "320px",
-            },
-        }).showToast();
-
-        setTimeout(() => {
-            window.location.href = "view_products.html";
-        }, 1000);
-    } else {
-        allProducts.push(product);
-
-        localStorage.setItem("products", JSON.stringify(allProducts));
-
-        Toastify({
-            text: "✓ Product added successfully!",
-            duration: 4000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-
-            style: {
-                background: `
-                    linear-gradient(
-                        135deg,
-                        rgba(24, 82, 60, 0.82),
-                        rgba(47, 125, 91, 0.68)
-                    )
-                `,
-
-                backdropFilter: "blur(25px) saturate(180%)",
-                WebkitBackdropFilter: "blur(25px) saturate(180%)",
-                border: "1px solid rgba(255, 255, 255, 0.32)",
-                borderRadius: "18px",
-
-                boxShadow: `
-                    0 15px 45px rgba(22, 70, 50, 0.25),
-                    0 5px 20px rgba(31, 101, 73, 0.18),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.35)
-                `,
-
-                color: "#ffffff",
-                padding: "18px 25px",
-                fontSize: "15px",
-                fontWeight: "600",
-                letterSpacing: "0.2px",
-                minWidth: "320px",
-            },
-        }).showToast();
-
-        productForm.reset();
-    }
+    productForm.reset();
 });

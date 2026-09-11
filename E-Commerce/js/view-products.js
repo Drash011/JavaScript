@@ -236,7 +236,7 @@ function deleteProduct(index) {
 
 
 function editProduct(index) {
-    window.location.href = `add_product.html?edit=${index}`;
+    window.location.href = `edit-product.html?edit=${index}`;
 }
 
 
