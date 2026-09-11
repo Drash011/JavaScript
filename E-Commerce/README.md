@@ -89,9 +89,19 @@ The project focuses on:
 
 <br><br>
 
-## 📦 Product Management
+## 👁️ View Product
 
 <img src="images/view-product.png" alt="Product Inventory Management" width="100%"/>
+
+<br><br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:10261D,50:2E6B50,100:4A8F68" width="70%"/>
+
+<br><br>
+
+## ✏️ Edit Product
+
+<img src="images/edit-product.png" alt="Product Inventory Management" width="100%"/>
 
 <br><br>
 
@@ -615,6 +625,7 @@ E-Commerce/
 │   ├── 🖼️ add-product.png
 │   ├── 🖼️ view-product.png
 │   ├── 🖼️ product-details.png
+│   ├── 🖼️ edit-product.png
 │   │
 │   ├── 📁 products/
 │   └── 📁 ui/
