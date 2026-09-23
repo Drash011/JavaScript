@@ -14,20 +14,6 @@ powered by the OpenWeather API and designed with a premium glassmorphism interfa
 
 <br>
 
-<a href="#-overview">Overview</a>
-&nbsp;&nbsp;•&nbsp;&nbsp;
-<a href="#-features">Features</a>
-&nbsp;&nbsp;•&nbsp;&nbsp;
-<a href="#-preview">Preview</a>
-&nbsp;&nbsp;•&nbsp;&nbsp;
-<a href="#-technology">Technology</a>
-&nbsp;&nbsp;•&nbsp;&nbsp;
-<a href="#-project-structure">Structure</a>
-&nbsp;&nbsp;•&nbsp;&nbsp;
-<a href="#-installation">Installation</a>
-
-<br><br>
-
 <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=21&duration=2800&pause=900&color=62E8FF&center=true&vCenter=true&width=760&lines=Live+weather+for+cities+around+the+world;Premium+glassmorphism+weather+dashboard;Real-time+data+powered+by+OpenWeather;Built+with+HTML%2C+CSS+%26+JavaScript" alt="Typing Animation">
 
 <br><br>
@@ -286,6 +272,6 @@ HTML5 • CSS3 • JavaScript • OpenWeather API
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=180&section=footer&color=0:4A90C2,50:2F6F9F,100:1E4F73&animation=fadeIn" width="100%">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:4A90C2,50:2F6F9F,100:1E4F73&animation=fadeIn" width="100%">
 
 </div>
